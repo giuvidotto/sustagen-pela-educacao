@@ -9,6 +9,7 @@ const   gulp            = require('gulp'),
         concat          = require('gulp-concat'),
         imageMin        = require('gulp-imagemin'),
         imageResize     = require('gulp-image-resize'),
+        rename          = require('gulp-rename'),
         changed         = require('gulp-changed'),
         uglify          = require('gulp-uglify');
 
@@ -31,7 +32,7 @@ var watch_css       = dir_css_input + '**/*.+(sass|scss)',
 
 //<functions>
 
-function compileStylesheets() {
+function compileStylesheets(done) {
     return gulp.src( watch_css )
         .pipe( sourceMaps.init({
             loadMaps: true
@@ -43,9 +44,10 @@ function compileStylesheets() {
         .pipe( sourceMaps.write() )
         .pipe( gulp.dest(dir_css_output) )
         .pipe( browserSync.stream() );
+    done();
 }
 
-function concatStylesheets() {
+function concatStylesheets(done) {
     return gulp.src( dir_css_output )
         .pipe( sourceMaps.init({
             loadMaps: true,
@@ -55,19 +57,27 @@ function concatStylesheets() {
         .pipe( cleanCSS() )
         .pipe( sourceMaps.write('./maps/') )
         .pipe( gulp.dest(dir_css_input));
+    done();
 }
 
-function concatScripts() {
+function concatScripts(done) {
     return gulp.src( dir_js_input )
         .pipe( concat('app.min.js') )
         .pipe( uglify() )
         .pipe( gulp.dest( dir_js_output ) );
+    done();
 }
 
-function compressImages() {
+function resizeImages(done) {
     return gulp.src( dir_img_input )
-        .pipe(changed( dir_img_output) )
-        .pipe(imageMin([
+        .pipe( changed( dir_img_output) )
+        .pipe( imageResize({
+            percentage: 51.61458333
+        }))
+        .pipe( rename( function ( path ) {
+            path.basename = '${path.basename}@mobile';
+        }))
+        .pipe( imageMin([
             imageMin.gifsicle({
                 interlaced: true
             }),
@@ -79,9 +89,28 @@ function compressImages() {
             })
         ]))
         .pipe( gulp.dest( dir_img_output ) )
+    done();
 }
 
-function watch() {
+function optimizeImages(done) {
+    return gulp.src( dir_img_input )
+        .pipe( changed( dir_img_output ) )
+        .pipe( imageMin([
+            imageMin.gifsicle({
+                interlaced: true
+            }),
+            imageMin.jpegtran({
+                progressive: true
+            }),
+            imageMin.optipng({
+                optimizationLevel: 5
+            })
+        ]))
+        .pipe( gulp.dest( dir_img_output ) )
+    done();
+}
+
+function watch(done) {
     //browsersync init
     browserSync.init({
         open: 'external',
@@ -91,12 +120,14 @@ function watch() {
     });
 
     //file compilers
-    gulp.watch( watch_css, gulp.series(compileStylesheets, concatStylesheets) );
+    gulp.watch( watch_css, gulp.series( compileStylesheets, concatStylesheets ) );
     gulp.watch( watch_js, concatScripts );
-    gulp.watch( watch_img, compressImages );
+    gulp.watch( watch_img, gulp.series( optimizeImages, resizeImages ) );
 
     //browsersync
-    //gulp.watch([ watch_html, watch_css, watch_js ]).on( 'change', browserSync.reload );
+    gulp.watch([ watch_html, watch_css, watch_js ]).on( 'change', browserSync.reload );
+
+    done();
 }
 
 //</functions>
@@ -106,7 +137,7 @@ function watch() {
 exports.compileStylesheets  = compileStylesheets;
 exports.concatStylesheets   = concatStylesheets;
 exports.concatScripts       = concatScripts;
-exports.compressImages      = compressImages;
+exports.optimizeImages      = optimizeImages;
 exports.watch               = watch;
 
 var build = gulp.parallel( watch );
