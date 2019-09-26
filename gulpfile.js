@@ -7,8 +7,12 @@ const   gulp        = require('gulp'),
         uglify      = require('gulp-uglify'),
         pipeline    = require('readable-stream').pipeline,
         imageResize = require('gulp-image-resize'),
+        parallel    = require('concurrent-transform'),
+        os          = require('os'),
         rename      = require('gulp-rename'),
         imageMin    = require('gulp-imagemin'),
+        mozJpeg     = require('imagemin-mozjpeg'),
+        pngQuant    = require('imagemin-pngquant'),
         changed     = require('gulp-changed'),
         browserSync = require('browser-sync').create();
 
@@ -21,13 +25,19 @@ var dir_app         = './app',
     dir_js_app      = dir_app+dir_js,
     dir_js_web      = dir_web+dir_js,
     dir_img         = '/assets/images',
-    dir_img_app     = dir_app+dir_img+'/*',
+    dir_img_sm      = dir_img+'/resize',
+    dir_img_app     = dir_app+dir_img,
+    dir_img_app_sm  = dir_app+dir_img_sm,
     dir_img_web     = dir_web+dir_img,
     watch_css_app   = dir_css_app+'/**/*.+(sass|scss)',
     watch_css_web   = dir_css_web+'/**/*.css',
     watch_js        = '/**/*.js',
     watch_js_app    = dir_js_app+watch_js,
     watch_js_web    = dir_js_web+watch_js,
+    watch_img       = '/*.{jpg,jpeg,png,gif,svg,webp}',
+    watch_img_app   = dir_img_app+watch_img,
+    watch_img_app_sm= dir_img_app_sm+watch_img,
+    watch_img_web   = dir_img_web+watch_img,
     watch_html      = '/**/*.html',
     watch_html_app  = dir_app+watch_html,
     watch_html_web  = dir_web+watch_html;
@@ -61,28 +71,34 @@ function concatJS() {
 }
 
 function resizeImg() {
-    return  gulp.src(dir_img_app)
-            .pipe(imageResize({percentage:58}))
-            .pipe(rename({suffix:'.mobile'}))
-            .pipe(gulp.dest(dir_img_app))
+    return  gulp.src(watch_img_app)
+            .pipe(rename(function(path){ path.basename += ".min"; }))
+            .pipe(gulp.dest(dir_img_app_sm))
+            .pipe(rename(function(path){ path.basename += "@sm"; }))
+            .pipe(changed(dir_img_app_sm))
+            .pipe(parallel(
+                imageResize({percentage:75}),
+                os.cpus().length
+            ))
+            .pipe(gulp.dest(dir_img_app_sm))
 }
 
 function optimizeImg() {
-    return  gulp.src(dir_img_app)
-            .pipe(changed(dir_img_web))
+    return  gulp.src(watch_img_app_sm)
             .pipe(imageMin([
                 imageMin.gifsicle({interlaced:true}),
-                imageMin.jpegtran({progressive:true}),
-                imageMin.optipng({optimizationLevel:5})
+                mozJpeg({quality:96,fastCrush:true}),
+                pngQuant({quality:[.90,.96]}),
+                
             ]))
             .pipe(gulp.dest(dir_img_web));
 }
 
 function watch() {
-    browserSync.init({open:'external',server:{baseDir:'./'}});
+    browserSync.init({open:'external',server:{baseDir:'./web/'}});
     gulp.watch(watch_css_app, gulp.series(compileCSS, concatCSS));
     gulp.watch(watch_js_app, concatJS);
-    gulp.watch(dir_img_app, gulp.series(resizeImg, optimizeImg));
+    gulp.watch(watch_img_app, gulp.series(resizeImg, optimizeImg));
     gulp.watch([watch_html_web, watch_js_app, watch_css_web+'app.min.css']).on('change', browserSync.reload);
 }
 

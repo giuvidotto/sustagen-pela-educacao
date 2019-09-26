@@ -1,0 +1,268 @@
+//<vars>
+
+$grid-breakpoint-xxxxl:2019px; //2048
+$grid-breakpoint-xxxxl-xxxl:1899px; //1920
+$grid-breakpoint-xxxl:1659px; //1680
+$grid-breakpoint-xxxl-xxl:1579px; //1600
+$grid-breakpoint-xxl:1419px; // 1440
+$grid-breakpoint-xxl-xl:1339px; // 1366
+$grid-breakpoint-xl:1259px; //1280
+$grid-breakpoint-xl-l:1199x;
+$grid-breakpoint-l:991px; // 1024
+$grid-breakpoint-l-m:879px;
+$grid-breakpoint-m:767px; // 800
+$grid-breakpoint-m-s:671px;
+$grid-breakpoint-s:575px;
+$grid-breakpoint-s-xs:527px;
+$grid-breakpoint-xs:479px;
+$grid-breakpoint-xs-xxs:379px;
+$grid-breakpoint-xxs:0;
+
+$grid-breakpoint-xxxxl-min:2020px;
+$grid-breakpoint-xxxxl-xxxl-min:1900px;
+$grid-breakpoint-xxxl-min:1660px;
+$grid-breakpoint-xxxl-xxl-min:1580px;
+$grid-breakpoint-xxl-min:1420px;
+$grid-breakpoint-xxl-xl-min:1340px;
+$grid-breakpoint-xl-min:1260px;
+$grid-breakpoint-xl-l-min:1200x;
+$grid-breakpoint-l-min:992px;
+$grid-breakpoint-l-m-min:880px;
+$grid-breakpoint-m-min:768px;
+$grid-breakpoint-m-s-min:672px;
+$grid-breakpoint-s-min:576px;
+$grid-breakpoint-s-xs-min:528px;
+$grid-breakpoint-xs-min:480px;
+$grid-breakpoint-xs-xxs-min:380px;
+$grid-breakpoint-xxs-min:0;
+
+ // portrait mobile
+$grid-breakpoint-v-mobile-l:949px; 
+$grid-breakpoint-v-mobile-m:735px;
+$grid-breakpoint-v-mobile-s:639px;
+$grid-breakpoint-v-mobile-xs:567px;
+
+$grid-breakpoint-v-mobile-l-min:950px; 
+$grid-breakpoint-v-mobile-m-min:736px;
+$grid-breakpoint-v-mobile-s-min:640px;
+$grid-breakpoint-v-mobile-xs-min:568px;
+
+// portrait tablet
+$grid-breakpoint-v-tablet-l:959px;
+$grid-breakpoint-v-tablet-m:811px;
+$grid-breakpoint-v-tablet-s:735px;
+$grid-breakpoint-v-tablet-xs:639px;
+
+$grid-breakpoint-v-tablet-l-min:960px;
+$grid-breakpoint-v-tablet-m-min:812px;
+$grid-breakpoint-v-tablet-s-min:736px;
+$grid-breakpoint-v-tablet-xs-min:640px;
+
+
+$color-grayscale-f: #fff;
+$color-grayscale-0: #000;
+$color-grayscale-1: #231f20;
+$color-grayscale-2: #303030;
+$color-grayscale-3: #5a5a5a;
+
+
+$color-main-1: #eae318;
+$color-main-2: #f7f770;
+
+$ease-time-1:.2s;
+$ease-time-2:.4s;
+$ease-time-3:.6s;
+$ease-time-4:.8s;
+$ease-in:cubic-bezier(0.47, 0, 0.745, 0.715);
+$ease-out:cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-in-out:cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+//</vars>
+
+
+//<functions-&-mixins>
+
+@function decimal-round($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @if $digits > 0 {
+        @for $i from 1 through $digits {
+            $n: $n * 10;
+        }
+    }
+    @if $mode == round {
+        @return round($number * $n) / $n;
+    } @else if $mode == ceil {
+        @return ceil($number * $n) / $n;
+    } @else if $mode == floor {
+        @return floor($number * $n) / $n;
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+@function px-to-vw($number){ //ref: 1024px
+    $number: decimal-round((($number * 100) / 1024) * 1vw, 3);
+    @return $number;
+}
+
+@function px-to-rem($number){
+    $number: decimal-round($number/10, 2) * 1rem;
+    @return $number;
+}
+
+@function px-to-pct($number){
+    $number: decimal-round(($number*100)/1920, 2) * 1%;
+    @return $number;
+}
+
+@mixin aspect-ratio($size1,$size2,$second-property:auto,$orientation:landscape,$unit:vw){
+    $size2:decimal-round((($size2 * 100) / $size1), 3) * 1%;
+    $size1:if($unit!=vw,px-to-rem($size1),px-to-vw($size1));
+    $value:if($orientation==landscape,('width','height','bottom'),('height','width','left'));
+    $property1:nth($value,1);
+    $property2:nth($value,2);
+    $padding:nth($value,3);
+    
+    padding-#{$padding}:$size2;
+    #{$property2}:0;
+    @if($second-property!=auto){
+        #{$property1}:if($second-property!=auto,$second-property,$size1);
+    }
+}
+
+@mixin container{
+    margin-left:auto;
+    margin-right:auto;
+    min-width:285px;
+    max-width:1340px;
+    width:78.125vw;
+    box-sizing:border-box;
+
+
+    //<media-queries>
+    @media all and (max-width:#{$grid-breakpoint-xxl-xl}){
+        max-width:945px;
+        width:75vw;
+    }
+
+    @media all and (max-width:#{$grid-breakpoint-xl}){
+        max-width:880px;
+        width:73.333vw;
+    }
+
+    @media all and (max-width:#{$grid-breakpoint-xl-l}){
+        max-width:768px;
+        width:75vw;
+    }
+
+    @media all and (max-width:#{$grid-breakpoint-l}){
+        max-width:720px;
+        width:75vw;
+    }
+
+    @media all and (max-width:#{$grid-breakpoint-l-m}){
+        max-width:640px;
+        width:78.125vw;
+    }
+
+    @media all and (max-width:#{$grid-breakpoint-m}){
+        max-width:600px;
+        width:78.125vw;
+    }
+    
+    @media all and (max-width:#{$grid-breakpoint-m-s}){
+        max-width:540px;
+        width:78.125vw;
+    }
+    
+    @media all and (max-width:#{$grid-breakpoint-s}){
+        max-width:450px;
+        width:78.125vw;
+    }
+    
+    @media all and (max-width:#{$grid-breakpoint-s-xs}){
+        max-width:400px;
+        width:78.125vw;
+    }
+    
+    @media all and (max-width:#{$grid-breakpoint-xs}){
+        max-width:92%;
+        width:92%;
+    }
+    //</media-queries>
+
+    //<two-step-media-queries>
+    @media all and (min-width:#{$grid-breakpoint-xxl-min}) and (min-height:#{$grid-breakpoint-v-mobile-xs-min}){
+        max-width:1024px;
+        width:72.5vw;
+    }
+
+    @media all and (min-width:#{$grid-breakpoint-xxxl-xxl-min}) and (min-height:#{$grid-breakpoint-v-tablet-xs-min}){
+        max-width:1125px;
+        width:72.5vw;
+    }
+
+    @media all and (min-width:#{$grid-breakpoint-xxxl-min}) and (min-height:#{$grid-breakpoint-v-tablet-s-min}){
+        max-width:1180px;
+        width:72.5vw;
+    }
+
+    @media all and (min-width:#{$grid-breakpoint-xxxxl-xxxl-min}) and (min-height:#{$grid-breakpoint-v-tablet-m-min}){
+        max-width:1220px;
+        width:72.5vw;
+    }
+
+    @media all and (min-width:#{$grid-breakpoint-xxxxl-min}) and (min-height:#{$grid-breakpoint-v-tablet-l-min}){
+        max-width:1340px;
+        width:72.5w;
+    }
+    //</two-step-media-queries>
+}
+
+@mixin placeholder($color:$color-grayscale-0){
+    &::-webkit-input-placeholder{
+        color:$color;
+        padding:px-to-rem(2);
+    }
+    &:-moz-placeholder{
+        color:$color;
+        padding:px-to-rem(2);
+    }
+    &::-moz-placeholder{
+        color:$color;
+        padding:px-to-rem(2);
+    }
+    &:-ms-input-placeholder{  
+        color:$color;
+        padding:px-to-rem(2);
+    }
+}
+
+//</functions-&-mixins>
+
+
+//<function-dependent-vars>
+
+$font-size-1: px-to-rem(54);
+$font-size-2: px-to-rem(42);
+$font-size-3: px-to-rem(33);
+$font-size-4: px-to-rem(24);
+$font-size-5: px-to-rem(19);
+$font-size-6: px-to-rem(16);
+$font-size-7: px-to-rem(13);
+
+//</function-dependent-vars>
