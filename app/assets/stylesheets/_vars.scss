@@ -59,15 +59,28 @@ $grid-breakpoint-v-tablet-s-min:736px;
 $grid-breakpoint-v-tablet-xs-min:640px;
 
 
-$color-grayscale-f: #fff;
-$color-grayscale-0: #000;
-$color-grayscale-1: #231f20;
-$color-grayscale-2: #303030;
-$color-grayscale-3: #5a5a5a;
+$container-ref:1200;
 
 
-$color-main-1: #eae318;
-$color-main-2: #f7f770;
+$color-bnw-f:       #fff;
+$color-bnw-0:       #000;
+$color-bnw-1:       #231f20;
+$color-bnw-2:       #303030;
+$color-bnw-3:       #5a5a5a;
+
+
+$color-pri-darker:  null;
+$color-pri-dark:    null;
+$color-pri:         null;
+$color-pri-light:   null;
+$color-pri-lighter: #ffe400;
+
+
+$color-sec-darker:  #091724;
+$color-sec-dark:    #10273e;
+$color-sec:         null;
+$color-sec-light:   #214b75;
+$color-sec-lighter: #86cef2;
 
 $ease-time-1:.2s;
 $ease-time-2:.4s;
@@ -114,8 +127,8 @@ $ease-in-out:cubic-bezier(0.445, 0.05, 0.55, 0.95);
     }
 }
 
-@function px-to-vw($number){ //ref: 1024px
-    $number: decimal-round((($number * 100) / 1024) * 1vw, 3);
+@function px-to-vw($number){ //ref: 1220px
+    $number: decimal-round((($number * 100) / $container-ref) * 1vw, 3);
     @return $number;
 }
 
@@ -124,8 +137,8 @@ $ease-in-out:cubic-bezier(0.445, 0.05, 0.55, 0.95);
     @return $number;
 }
 
-@function px-to-pct($number){
-    $number: decimal-round(($number*100)/1920, 2) * 1%;
+@function px-to-pct($number, $ref){
+    $number: decimal-round(($number*100)/$ref, 2) * 1%;
     @return $number;
 }
 
@@ -148,87 +161,74 @@ $ease-in-out:cubic-bezier(0.445, 0.05, 0.55, 0.95);
     margin-left:auto;
     margin-right:auto;
     min-width:285px;
-    max-width:1340px;
-    width:78.125vw;
+    max-width:1200px;
+    width:80vw;
     box-sizing:border-box;
 
 
     //<media-queries>
-    @media all and (max-width:#{$grid-breakpoint-xxl-xl}){
-        max-width:945px;
-        width:75vw;
-    }
 
+    
     @media all and (max-width:#{$grid-breakpoint-xl}){
-        max-width:880px;
-        width:73.333vw;
+        max-width:1200px;
+        width:78vw;
     }
 
     @media all and (max-width:#{$grid-breakpoint-xl-l}){
-        max-width:768px;
-        width:75vw;
+        max-width:945px;
+        width:80vw;
     }
 
     @media all and (max-width:#{$grid-breakpoint-l}){
-        max-width:720px;
-        width:75vw;
+        max-width:880px;
+        width:84vw;
     }
 
     @media all and (max-width:#{$grid-breakpoint-l-m}){
-        max-width:640px;
-        width:78.125vw;
+        max-width:768px;
+        width:86vw;
     }
 
     @media all and (max-width:#{$grid-breakpoint-m}){
-        max-width:600px;
-        width:78.125vw;
+        max-width:720px;
+        width:88vw;
     }
-    
+
     @media all and (max-width:#{$grid-breakpoint-m-s}){
-        max-width:540px;
-        width:78.125vw;
+        max-width:640px;
+        width:90vw;
     }
     
     @media all and (max-width:#{$grid-breakpoint-s}){
-        max-width:450px;
-        width:78.125vw;
+        max-width:600px;
+        width:92vw;
+    }
+
+    @media all and (max-width:#{$grid-breakpoint-xs}){
+        max-width:94%;
+        width:94%;
     }
     
     @media all and (max-width:#{$grid-breakpoint-s-xs}){
-        max-width:400px;
-        width:78.125vw;
-    }
-    
-    @media all and (max-width:#{$grid-breakpoint-xs}){
-        max-width:92%;
-        width:92%;
+        max-width:540px;
+        width:90vw;
     }
     //</media-queries>
 
     //<two-step-media-queries>
     @media all and (min-width:#{$grid-breakpoint-xxl-min}) and (min-height:#{$grid-breakpoint-v-mobile-xs-min}){
         max-width:1024px;
-        width:72.5vw;
-    }
-
-    @media all and (min-width:#{$grid-breakpoint-xxxl-xxl-min}) and (min-height:#{$grid-breakpoint-v-tablet-xs-min}){
-        max-width:1125px;
-        width:72.5vw;
+        width:76vw;
     }
 
     @media all and (min-width:#{$grid-breakpoint-xxxl-min}) and (min-height:#{$grid-breakpoint-v-tablet-s-min}){
         max-width:1180px;
-        width:72.5vw;
+        width:80vw;
     }
 
-    @media all and (min-width:#{$grid-breakpoint-xxxxl-xxxl-min}) and (min-height:#{$grid-breakpoint-v-tablet-m-min}){
+    @media all and (min-width:#{$grid-breakpoint-xxxl-min}) and (min-height:#{$grid-breakpoint-v-tablet-m-min}){
         max-width:1220px;
-        width:72.5vw;
-    }
-
-    @media all and (min-width:#{$grid-breakpoint-xxxxl-min}) and (min-height:#{$grid-breakpoint-v-tablet-l-min}){
-        max-width:1340px;
-        width:72.5w;
+        width:86vw;
     }
     //</two-step-media-queries>
 }
@@ -249,6 +249,16 @@ $ease-in-out:cubic-bezier(0.445, 0.05, 0.55, 0.95);
     &:-ms-input-placeholder{  
         color:$color;
         padding:px-to-rem(2);
+    }
+}
+
+@mixin responsive-bg($img,$format,$size:contain,$position:center center,$repeat:no-repeat){
+    background-size:$size;
+    background-repeat:$repeat;
+    background-image:url(../images/#{$img}.min@sm.#{$format});
+    background-position:$position;
+    @media all and(min-width:#{$grid-breakpoint-l-min}){
+        background-image:url(../images/#{$img}.min.#{$format});
     }
 }
 

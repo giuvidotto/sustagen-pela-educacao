@@ -25,9 +25,9 @@ var dir_app         = './app',
     dir_js_app      = dir_app+dir_js,
     dir_js_web      = dir_web+dir_js,
     dir_img         = '/assets/images',
-    dir_img_sm      = dir_img+'/resize',
+    dir_img_exp      = dir_img+'/export',
     dir_img_app     = dir_app+dir_img,
-    dir_img_app_sm  = dir_app+dir_img_sm,
+    dir_img_app_exp  = dir_app+dir_img_exp,
     dir_img_web     = dir_web+dir_img,
     watch_css_app   = dir_css_app+'/**/*.+(sass|scss)',
     watch_css_web   = dir_css_web+'/**/*.css',
@@ -36,7 +36,7 @@ var dir_app         = './app',
     watch_js_web    = dir_js_web+watch_js,
     watch_img       = '/*.{jpg,jpeg,png,gif,svg,webp}',
     watch_img_app   = dir_img_app+watch_img,
-    watch_img_app_sm= dir_img_app_sm+watch_img,
+    watch_img_app_sm= dir_img_app_exp+watch_img,
     watch_img_web   = dir_img_web+watch_img,
     watch_html      = '/**/*.html',
     watch_html_app  = dir_app+watch_html,
@@ -54,9 +54,10 @@ function compileCSS() {
 function concatCSS() {
     return  gulp.src(watch_css_web)
             .pipe(sourceMaps.init({loadMaps:true,largeFile:true}))
-            .pipe(concat('app.min.css'))
             .pipe(cleanCSS())
+            .pipe(concat('app.min.css'))
             .pipe(sourceMaps.write('./maps/'))
+            .pipe(changed(dir_css_web))
             .pipe(gulp.dest(dir_css_web))
             .pipe(browserSync.stream());
 }
@@ -73,14 +74,14 @@ function concatJS() {
 function resizeImg() {
     return  gulp.src(watch_img_app)
             .pipe(rename(function(path){ path.basename += ".min"; }))
-            .pipe(gulp.dest(dir_img_app_sm))
+            .pipe(gulp.dest(dir_img_app_exp))
             .pipe(rename(function(path){ path.basename += "@sm"; }))
-            .pipe(changed(dir_img_app_sm))
             .pipe(parallel(
                 imageResize({percentage:75}),
                 os.cpus().length
             ))
-            .pipe(gulp.dest(dir_img_app_sm))
+            .pipe(changed(dir_img_app_exp))
+            .pipe(gulp.dest(dir_img_app_exp))
 }
 
 function optimizeImg() {
@@ -91,15 +92,17 @@ function optimizeImg() {
                 pngQuant({quality:[.90,.96]}),
                 
             ]))
+            .pipe(changed(dir_img_web))
             .pipe(gulp.dest(dir_img_web));
 }
 
+
 function watch() {
-    browserSync.init({open:'external',server:{baseDir:'./web/'}});
-    gulp.watch(watch_css_app, gulp.series(compileCSS, concatCSS));
+    browserSync.init({open:'external',server:{baseDir:'./'}});
+    gulp.watch(watch_css_app, compileCSS);
     gulp.watch(watch_js_app, concatJS);
     gulp.watch(watch_img_app, gulp.series(resizeImg, optimizeImg));
-    gulp.watch([watch_html_web, watch_js_app, watch_css_web+'app.min.css']).on('change', browserSync.reload);
+    gulp.watch([watch_html_web, watch_js_app, watch_css_web+'app.css']).on('change', browserSync.reload);
 }
 
 exports.compileCSS  = compileCSS;

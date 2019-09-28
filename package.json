@@ -10,11 +10,13 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "concurrent-transform": "^1.0.0",
+    "g": "^2.0.1",
     "gm": "^1.23.1",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.1",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.2.0",
+    "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-image-resize": "^0.13.1",
     "gulp-imagemin": "^6.1.0",
