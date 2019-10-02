@@ -101,7 +101,7 @@ function watch() {
     browserSync.init({open:'external',server:{baseDir:'./'}});
     gulp.watch(watch_css_app, compileCSS);
     gulp.watch(watch_js_app, concatJS);
-    gulp.watch(watch_img_app, gulp.series(resizeImg, optimizeImg));
+    //gulp.watch(watch_img_app, gulp.series(resizeImg, optimizeImg));
     gulp.watch([watch_html_web, watch_js_app, watch_css_web+'app.css']).on('change', browserSync.reload);
 }
 

@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-148905643-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-148905643-1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SUSTAGEN PELA EDUCAÇÃO</title>
+    <title>Sustagen Pelo Futuro</title>
     <link rel="stylesheet" href="assets/stylesheets/app.min.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <script async="" src="https://static.hotjar.com/c/hotjar-1509000.js?sv=6"></script>
 </head>
 <body>
+    <div id="modal" class="modal">
+        <div class="window container">
+            <i class="close">fechar</i>
+            <p>Você pode encontrar na(s) loja(s) abaixo:</p>
+            <ul>
+                <li><a href="javascript://" data-store="carrefour" target="_blank">Carrefour</a></li>
+                <li><a href="javascript://" data-store="paodeacucar" target="_blank">Pão de Açúcar</a></li>
+                <li><a href="javascript://" data-store="paguemenos" target="_blank">Pague Menos</a></li>
+                <li><a href="javascript://" data-store="panvel" target="_blank">PanVel</a></li>
+                <li><a href="javascript://" data-store="farmadelivery" target="_blank">FarmaDelivery</a></li>
+                <li><a href="javascript://" data-store="pacheco" target="_blank">Pacheco</a></li>
+                <li><a href="javascript://" data-store="drogariasp" target="_blank">Drogaria São Paulo</a></li>
+                <li><a href="javascript://" data-store="magalu" target="_blank">Magalu</a></li>
+            </ul>
+        </div>
+    </div>
     <div id="wrapper">
-        <header class="header">
+        <nav class="menu">
+            <ul class="list container">
+                <li class="responsive-menu">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </li>
+                <li class="item">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="item">
+                    <a href="#produtos">Produtos <span class="text">participantes</span></a>
+                </li>
+                <li class="item">
+                    <a href="#instituto">Instituto Ayrton Senna</a>
+                </li>
+                <li class="item">
+                    <a href="#regulamento">Regulamento</a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header fase-2">
+            <a id="home" data-scroll="home" class="anchor"></a>
             <div class="container">
                 <div class="title">
                     <h1 class="title-responsive">
                         <figure class="logo">
-                            <img src="assets/images/logo.min@xs.png"
+                            <img src="assets/images/logo-completo.min@xs.png"
                                 alt="Logotipo da campanha Sustagen Kids e Instituto Ayrton Senna"/>
                             <figcaption class="text">
                                 Comprando Sustagen Kids, 100%* do lucro vai para o Instituto Ayrton Senna
@@ -98,107 +147,193 @@
             </div>
         </header>
         <article class="main">
-            <section class="timer container">
-                <h2 class="title">
-                    Começa em:
-                </h2>
-                <p class="text" id="timer">
-                    <span>00</span>dias <span>00</span>horas<br><span>00</span>min<i>uto</i>s <span>00</span>seg<i>undo</i>s
-                </p>
-            </section>
             <section class="products container">
+                <a id="produtos" class="anchor" data-scroll="produtos"></a>
                 <h2 class="title">
                     Confira os produtos<br> participantes
                 </h2>
                 <ul class="list">
                     <li class="item" data-type="type_g" data-order="order_0">
-                        Sustagen Kids
+                        Sabor Baunilha Sachê 190g
                     </li>
                     <li class="item dynamic-link" data-type="type_a" data-order="order_1">
-                        Sustagen Kids
+                        Sabor Morango Sachê 190g
                     </li>
                     <li class="item dynamic-link" data-type="type_b" data-order="order_2">
-                        Sustagen Kids
+                        Sabor Baunilha 380g
                     </li>
                     <li class="item dynamic-link active" data-type="type_c" data-order="order_3">
-                        Sustagen Kids
+                        Sabor Chocolate 380g
                     </li>
                     <li class="item dynamic-link" data-type="type_d" data-order="order_4">
-                        Sustagen Kids
+                        Sabor Morango 380g
                     </li>
                     <li class="item dynamic-link" data-type="type_e" data-order="order_5">
-                        Sustagen Kids
+                        Sabor Vitamina de Frutas 380g
                     </li>
                     <li class="item" data-type="type_f" data-order="order_6">
-                        Sustagen Kids
+                        Sabor Chocolate Sachê 190g
                     </li>
                     <li class="nav">
                         <button class="button prev dynamic-link" data-order="order_2">
                             <figure class="img">
                                 <img src="assets/images/button-prev.min.png"
-                                    srcset="assets/images/button-prev.min@sm.png 768w,
-                                    assets/images/button-prev.min.png 992w"
-                                    alt="Botão: Voltar"/>
+                                     srcset="assets/images/button-prev.min@xs.png 768w,
+                                     assets/images/button-prev.min@sm.png 992w,
+                                     assets/images/button-prev.min.png 1024w"
+                                     alt="Botão: Voltar"/>
                                 <figcaption class="text">voltar</figcaption>
                             </figure>
                         </button>
                         <button class="button next dynamic-link" data-order="order_4">
                             <figure class="img">
                                 <img src="assets/images/button-next.min.png"
-                                    srcset="assets/images/button-next.min@sm.png 768w,
-                                    assets/images/button-next.min.png 992w"
-                                    alt="Botão: Avançar"/>
+                                     srcset="assets/images/button-next.min@xs.png 768w,
+                                     assets/images/button-next.min@sm.png 992w,
+                                     assets/images/button-next.min.png 1024w"
+                                     alt="Botão: Avançar"/>
                                 <figcaption class="text">avançar</figcaption>
                             </figure>
                         </button>
                     </li>
+                    <span class="product-name">Sabor Chocolate 380g</span>
                 </ul>
+                <button class="buy" data-type="type_c">
+                    Comprar aqui
+                </button>
                 <p class="paragraph">
-                    Você vai nutrir seu filho<br>
-                    e fortalecer a educação no Brasil.
+                    Comprando Sustagen Kids, e mantendo uma alimentação equilibrada, seu filho cresce forte e saudável e 100%* dos lucros vão para o Instituto Ayrton Senna construir o futuro de milhões de crianças e jovens através da educação.
                 </p>
-                <!--<p class="paragraph highlight">
-                    Após ajudar,<br>
-                    compartilhe esta causa!<br>
-                    <strong>#SustagenPeloFuturo</strong>
-                </p>-->
-                <ul class="social">
-                    <li class="item">
-                        <a href="https://pt-br.facebook.com/sustagenbr/" target="_blank">
-                            <figure class="icon">
-                                <img src="assets/images/social-facebook.min.png"
-                                     srcset="assets/images/social-facebook.min@sm.png 768w,
-                                     assets/images/social-facebook.min.png 992w"
-                                     alt="Logotipo Facebook"/>
-                                     <img src="assets/images/social-facebook-active.min.png"
-                                          srcset="assets/images/social-facebook-active.min@sm.png 768w,
-                                          assets/images/social-facebook-active.min.png 992w"
-                                          alt="Logotipo Facebook"/>
-                                <figcaption class="text">
-                                    Facebook
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="https://www.youtube.com/channel/UCCWlBdW7DRCLC0Ks6dKtCbQ" target="_blank">
-                            <figure class="icon">
-                                <img src="assets/images/social-youtube.min.png"
-                                     srcset="assets/images/social-youtube.min@sm.png 768w,
-                                     assets/images/social-youtube.min.png 992w"
-                                     alt="Logotipo YouTube"/>
-                                     <img src="assets/images/social-youtube-active.min.png"
-                                          srcset="assets/images/social-youtube-active.min@sm.png 768w,
-                                          assets/images/social-youtube-active.min.png 992w"
-                                          alt="Logotipo YouTube"/>
-                                <figcaption class="text">
-                                    YouTube
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                </ul>
+                <div class="video">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/i7dEWQMNPhs" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </section>
+            <section class="institutional">
+                <a id="instituto" class="anchor" data-scroll="instituto"></a>
+                <div class="container">
+                    <div class="content">
+                        <i class="decor decor-1">
+                            <figure class="img">
+                                <img src="assets/images/ico-institutional.min.png"
+                                    srcset="assets/images/ico-institutional.min@sm.png 768w,
+                                    assets/images/ico-institutional.min.png 992w"
+                                    alt="desenho decorativo"/>
+                                <figcaption class="text">desenho decorativo</figcaption>
+                            </figure>
+                        </i>
+                        <h2>O Instituto Ayrton Senna transforma a vida de crianças e jovens através da educação.</h2>
+                        <p>
+                            Há quase 25 anos, o Instituto Ayrton Senna transforma as vidas de crianças e jovens pela educação. Inspirado pelo sonho do tricampeão Ayrton Senna, atua em parceria com gestores públicos, educadores, pesquisadores e organizações para implementar políticas e práticas educacionais baseadas em evidências. Veja os resultados:
+                        </p>
+                        <ul>
+                            <li>
+                                26 milhões de crianças e jovens beneficiados
+                            </li>
+                            <li>
+                                25 anos de atuação
+                            </li>
+                            <li>
+                                230 mil educadores capacitados
+                            </li>
+                            <li>
+                                Mais de 2.600 municípios atendidos
+                            </li>
+                            <li>
+                                Já esteve presente em 26 estados brasileiros e Distrito Federal  
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <figure class="photo">
+                    <img src="assets/images/institutional-bg.min@xs.jpg"
+                         alt="Foto promocional: Instituto Ayrton Senna"/>
+                    <figcaption class="text">
+                        Foto promocional: Instituto Ayrton Senna
+                    </figcaption>
+                </figure>
+            </section>
+            <section class="regulamento">
+                <a id="regulamento" class="anchor" data-scroll="regulamento"></a>
+                <h2>Regulamento</h2>
+                <div class="container">
+                    <p>
+                        O presente documento regula a campanha realizada pela Mead Johnson do Brasil Comércio e Importação de Produtos de Nutrição LTDA, doravante denominada "MJN", localizada na Avenida Juscelino Kubitschek, 1909, 24º andar, Torre Norte – CEP 04543-907 – Vila Nova Conceição – São Paulo/SP, inscrita no CNPJ/MF sob o nº 10.351.637/0001-86, com a participação do Instituto Ayrton Senna, doravante denominado "IAS", localizado na Rua Dr Fernandes Coelho, 85, 13º/parte, 14º, 15º e 16º andares – CEP  05423 040 – Pinheiros – São Paulo/SP, inscrito no CNPJ/MF sob o nº 00.328.072/0001-62
+                    </p>
+                    <ol>
+                        <li><span>A Campanha</span> tem por objetivo incentivar a educação e a nutrição através de parceria entre MJN, por meio de sua marca Sustagen Kids, e o IAS ("Campanha").</li>
+                        <li><span>A Campanha</span> terá duração de 1 (um) mês, iniciando-se às 00:01 de 01/10/19 e encerrando-se às 23:59 de 31/10/19, em todo território nacional.</li>
+                        <li><span>A Campanha</span> consistirá na reversão de 100% do lucro relativo ao volume adicional comercializado de Sustagen Kids comparado ao volume médio mensal histórico. Ou seja, as vendas de Sustagen Kids do mês de outubro de 2019 que superarem a média do volume vendido entre o período de julho/2018 a junho/2019, terão a totalidade de seu lucro referente à quantidade excedente revertida ao IAS.</li>
+                        <li><span>A média</span> mensal histórica será calculada pela MJN, e tomará por base o período de referência de julho/2018 a junho/2019. Serão utilizados dados internos para a análise e os resultados serão reportados oficialmente ao IAS tão logo os sejam obtidos.</li>
+                        <li><span>A média</span> mensal histórica será calculada pela MJN, e tomará por base o período de referência de julho/2018 a junho/2019. Serão utilizados dados internos para a análise e os resultados serão reportados oficialmente ao IAS tão logo os sejam obtidos.</li>
+                        <li><span>A presente</span> Campanha engloba todos os produtos da linha Sustagen Kids, sendo, entretanto, considerado o volume de todas as apresentações de forma conjunta.</li>
+                        <li><span>Não</span> será necessário realizar nenhum tipo de cadastro nos estabelecimentos ou ambientes online para participar da campanha. Os produtos Sustagen Kids vendidos em qualquer estabelecimento comporão o montante a ser avaliado nos termos do item 3 deste regulamento. </li>
+                        <li><span>A parceria</span> não estabelece nenhuma espécie de vínculo com consumidores ou reversão de benefícios a estes. </li>
+                        <li><span>As eventuais</span> dúvidas, omissões e/ou controvérsias oriundas do presente documento serão dirimidas pela MJN, que apresentará a solução dos casos de forma soberana e irrevogável. </li>
+                        <li><span>A MJN</span> se reserva o direito de alterar ou encerrar a campanha a qualquer momento, sem necessidade de aviso prévio aos consumidores.</li>
+                        <li><span>Eventuais</span> dúvidas poderão ser apresentadas ao SAC Mead Johnson através do telefone 0800-7252504 ou pelo e-mail sac.br@mjn.com.</li>
+                    </ol>
+                    <a class="show-more" href="#regulamento">
+                        <figure class="img">
+                            <img src="assets/images/button-next.min.png"
+                                 srcset="assets/images/button-next.min@xs.png 768w,
+                                 assets/images/button-next.min@sm.png 992w,
+                                 assets/images/button-next.min.png 1024w"
+                                 alt="mostrar"/>
+                            <figcaption class="text">mostrar</figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </section>
+            <nav class="contact">
+                <div class="container">
+                    <p class="cta cta-1">É você e Sustagen Kids na corrida pela educação</p>
+                    <p class="cta cta-2">Compartilhe esta causa!</p>
+                    <figure class="img">
+                        <img src="assets/images/sustagenpelofuturo.min.png"
+                            srcset="assets/images/sustagenpelofuturo.min@sm.png 768w,
+                            assets/images/sustagenpelofuturo.min.png 992w"
+                            alt="#sustagenpelofuturo"/>
+                        <figcaption class="text">#sustagenpelofuturo</figcaption>
+                    </figure>
+                    <p class="cta cta-3"><span>SAC :</span> 0800-7252504 ou pelo e-mail <a href="mailto:sac.br@mjn.com" target="_blank">sac.br@mjn.com</a></p>
+                    <ul class="social">
+                        <li class="item">
+                            <a href="https://pt-br.facebook.com/sustagenbr/" target="_blank">
+                                <figure class="icon">
+                                    <img src="assets/images/social-facebook.min.png"
+                                        srcset="assets/images/social-facebook.min@sm.png 768w,
+                                        assets/images/social-facebook.min.png 992w"
+                                        alt="Logotipo Facebook"/>
+                                        <img src="assets/images/social-facebook-active.min.png"
+                                            srcset="assets/images/social-facebook-active.min@sm.png 768w,
+                                            assets/images/social-facebook-active.min.png 992w"
+                                            alt="Logotipo Facebook"/>
+                                    <figcaption class="text">
+                                        Facebook
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="https://www.youtube.com/channel/UCCWlBdW7DRCLC0Ks6dKtCbQ" target="_blank">
+                                <figure class="icon">
+                                    <img src="assets/images/social-youtube.min.png"
+                                        srcset="assets/images/social-youtube.min@sm.png 768w,
+                                        assets/images/social-youtube.min.png 992w"
+                                        alt="Logotipo YouTube"/>
+                                        <img src="assets/images/social-youtube-active.min.png"
+                                            srcset="assets/images/social-youtube-active.min@sm.png 768w,
+                                            assets/images/social-youtube-active.min.png 992w"
+                                            alt="Logotipo YouTube"/>
+                                    <figcaption class="text">
+                                        YouTube
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
             <footer class="footer">
                 <div class="container">
                     <ul class="brand">
@@ -230,7 +365,7 @@
                         </li>
                     </ul>
                     <p class="legal">
-                        *100% do lucro excedente relativo ao volume adicional do mês de outubro comparado à média mensal histórica. <!--Consulte o <a href="javascript://" target="_blank">regulamento aqui</a>.--><br>
+                        *100% do lucro excedente relativo ao volume adicional do mês de outubro comparado à média mensal histórica.<br>Consulte o <a href="#regulamento">regulamento aqui</a>.<br>
                         NÃO CONTÉM GLÚTEN. Campanha válida de 01/10/19 a 31/10/19.
                     </p>
                     <a class="link" href="https://www.juntospelofuturo.com.br" target="_blank">
@@ -240,7 +375,31 @@
             </footer>
         </article>
     </div>
-    <script type="text/javascript" src="assets/scripts/jquery-3.4.1.min.js"></script>
+    <!-- Hotjar Tracking Code for http://www.juntospelofuturo.com.br -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1509000,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1509000,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <script type="text/javascript" src="assets/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery.touchswipe.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/ScrollToPlugin.min.js"></script>
     <script type="text/javascript" src="assets/scripts/app.min.js"></script>
 </body>
 </html>

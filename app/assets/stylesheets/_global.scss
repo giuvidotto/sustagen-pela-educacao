@@ -10,8 +10,6 @@ html,body{
     margin:0;
     font-family:'Roboto', Helvetica, Arial, sans-serif;
     min-width:320px;
-    height:100%;
-    min-height:100%;
 }
 h1,h2,h3,h4,h5,p{
     margin:0;
@@ -52,8 +50,8 @@ img{
     max-width:100%;
 }
 ::selection{
-    background:transparent;
-    color:inherit;
+    background:$color-pri-lighter;
+    color:$color-sec-darker;
 }
 
 //</native>
@@ -76,39 +74,5 @@ img{
 .container{
     @include container;
 }
-
-/*.dynamic-content-container{
-    position:relative;
-
-
-    .dynamic-content{
-        position:absolute;
-        top:0;
-        left:0;
-        opacity:0;
-        transition:$ease-time-2 $ease-out $ease-time-1;
-        transform:translateX(-4em);
-        z-index:-1;
-
-        
-        &.active{
-            position:relative;
-            opacity:1;
-            transform:translateX(0);
-            transition:$ease-time-1 $ease-in;
-            z-index:0;
-        }
-    
-        &.inactive{
-            transform:translateX(4em);
-            opacity:0;
-        }
-    
-        &.backwards{
-            transform:translateX(-4em);
-            opacity:0;
-        }
-    }
-}*/
 
 //</classes>
