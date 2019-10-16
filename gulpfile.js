@@ -17,7 +17,7 @@ const   gulp        = require('gulp'),
         browserSync = require('browser-sync').create();
 
 var dir_app         = './app',
-    dir_web         = './web',
+    dir_web         = './web/fase2/',
     dir_css         = '/assets/stylesheets',
     dir_css_app     = dir_app+dir_css,
     dir_css_web     = dir_web+dir_css,
@@ -98,7 +98,7 @@ function optimizeImg() {
 
 
 function watch() {
-    browserSync.init({open:'external',server:{baseDir:'./'}});
+    browserSync.init({open:'external',server:{baseDir:'./web/fase2/'}});
     gulp.watch(watch_css_app, compileCSS);
     gulp.watch(watch_js_app, concatJS);
     //gulp.watch(watch_img_app, gulp.series(resizeImg, optimizeImg));

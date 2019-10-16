@@ -135,6 +135,10 @@ $product-item-ref-w:185;
                         @include responsive-bg('store-magalu','png');
                     }
     
+                    &[data-store=ultrafarma]{
+                        @include responsive-bg('store-ultrafarma','png');
+                    }
+    
                     &:hover{
                         transform:scale(1.1);
                         box-shadow:0 0 px-to-rem(10) 0 rgba(0,0,0,.4);
@@ -465,37 +469,9 @@ $product-item-ref-w:185;
                     transition:$ease-time-3 $ease-out;
 
 
-                    /*.product{
-                        position:absolute;
-                        top:0;
-                        left:0;
-                        width:100%;
-                        height:100%;
-                        display:flex;
-                        align-items:center;
-                        justify-content:center;
-
-
-                        img{
-                            max-width:100%;
-                            max-height:100%;
-                        }
-
-                        .text{
-                        }
-                    }*/
-
                     &[data-type=type_a]{
                         @include responsive-bg('product-1','png');
-
-
-                        /*img{
-                            max-width:110%;
-                            max-height:110%;
-                        }*/
                     }
-                    
-
                     &[data-type=type_b]{
                         @include responsive-bg('product-2','png');
                     }
@@ -838,6 +814,7 @@ $product-item-ref-w:185;
                 width:px-to-pct(12,$product-list-ref-w);
                 transform:translateX(-50%) rotate(90deg);
                 padding:px-to-rem(10);
+                mix-blend-mode:exclusion;
                 cursor:pointer;
                 box-sizing:content-box;
 
@@ -1053,6 +1030,103 @@ $product-item-ref-w:185;
                 text-indent:-9999px;
                 line-height:0;
                 font-size:0;
+            }
+        }
+    }
+
+    .resultado{
+        background-color:$color-sec-dark;
+        text-transform:uppercase;
+        padding-top:px-to-rem(40);
+        padding-bottom:px-to-rem(50);
+
+
+        .text-1,
+        .text-2{
+            font-style:italic;
+            font-size:px-to-rem(30);
+            color:$color-sec-lighter;
+            text-align:center;
+            display:block;
+            letter-spacing:.02em;
+        }
+        
+        .text-1{
+            font-weight:500;
+        }
+
+        .img{
+            display:block;
+            margin:px-to-rem(-15) auto 0;
+            text-align:center;
+
+
+            img{
+                max-width:580px;
+            }
+
+            .text{
+                font-size:0;
+                text-indent:-9999px;
+                line-height:0;
+            }
+        }
+
+        .text-2{
+            color:$color-bnw-f;
+            font-style:normal;
+            padding-top:px-to-rem(5);
+            padding-bottom:px-to-rem(40);
+        }
+
+        .text-3{
+            @include responsive-bg('title-border-2','png', 100% 100%);
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:px-to-rem(12) px-to-rem(20);
+            color:$color-bnw-f;
+            text-transform:uppercase;
+            width:80%;
+            line-height:1.2;
+            margin:0 auto;
+            letter-spacing:.06em;
+
+
+            .text-3-a{
+                text-align:right;
+                font-size:px-to-rem(42);
+                padding-right:px-to-rem(36);
+                flex-grow:1;
+            }
+
+            .text-3-b{
+                text-align:left;
+                font-size:px-to-rem(24);
+                align-self:flex-start;
+                padding-top:px-to-rem(10);
+
+
+                b{
+                    font-weight:500;
+                    font-size:px-to-rem(32);
+                    display:block;
+                }
+            }
+
+            .text-3-c{
+                font-size:px-to-rem(110);
+                line-height:1;
+                font-weight:900;
+                flex-grow:1;
+            }
+
+            .text-3-d{
+                text-align:left;
+                font-size:px-to-rem(28);
+                padding-left:px-to-rem(10);
+                flex-shrink:1;
+                flex-grow:0;
             }
         }
     }

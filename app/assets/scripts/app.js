@@ -46,11 +46,15 @@ $.each($('.products .list .item'), function(i){
                 stores: [
                 {
                     name:store_array[0],
+                    link:'https://busca.magazineluiza.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkids&utm_medium=magalu&utm_campaign=sustagen_ias&utm_term=RB'
+                },
+                {
+                    name:store_array[1],
                     link:'https://www.carrefour.com.br/Sustagen-Kids-Sabor-Morango-Sache-190g/p/8952566?utm_source=LP_Sustagenmorango&utm_medium=carrefour&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
-                    name:store_array[7],
-                    link:'https://busca.magazineluiza.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkids&utm_medium=magalu&utm_campaign=sustagen_ias&utm_term=RB'
+                    name:store_array[8],
+                    link:'https://www.ultrafarma.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkidssearch&utm_medium=ultrafarma&utm_campaign=sustagen_ias&utm_term=RB'
                 }
             ]});
             break;
@@ -63,35 +67,39 @@ $.each($('.products .list .item'), function(i){
                 stores: [
                 {
                     name:store_array[0],
-                    link:'https://www.carrefour.com.br/Sustagen-Kids-Sabor-Baunilha-380g/p/8707847?utm_source=LP_Sustagenbaunilha&utm_medium=carrefour&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://busca.magazineluiza.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkids&utm_medium=magalu&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[1],
-                    link:'https://www.paodeacucar.com/produto/87433/alimento-nutritivo-sabor-baunilha-sustagen-kids-lata-380g?utm_source=LP_Sustagenbaunilha&utm_medium=gpa&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.carrefour.com.br/Sustagen-Kids-Sabor-Baunilha-380g/p/8707847?utm_source=LP_Sustagenbaunilha&utm_medium=carrefour&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[2],
-                    link:'https://www.paguemenos.com.br/sustagen-kids-baunilha-380g/p?utm_source=LP_Sustagenbaunilha&utm_medium=paguemenos&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.paodeacucar.com/produto/87433/alimento-nutritivo-sabor-baunilha-sustagen-kids-lata-380g?utm_source=LP_Sustagenbaunilha&utm_medium=gpa&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[3],
-                    link:'https://www.panvel.com/panvel/sustagen-kids-baunilha-380g/p-490020?utm_source=LP_Sustagenbaunilha&utm_medium=panvel&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.paguemenos.com.br/sustagen-kids-baunilha-380g/p?utm_source=LP_Sustagenbaunilha&utm_medium=paguemenos&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[4],
-                    link:'https://www.farmadelivery.com.br/marca/rb/sustagen?utm_source=LP_Sustagenkids&utm_medium=farmadelivery&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.panvel.com/panvel/sustagen-kids-baunilha-380g/p-490020?utm_source=LP_Sustagenbaunilha&utm_medium=panvel&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[5],
-                    link:'https://www.drogariaspacheco.com.br/suplemento-alimentar-sustagen-kids-baunilha-380g/p?utm_source=LP_Sustagenbaunilha&utm_medium=pacheco&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.farmadelivery.com.br/marca/rb/sustagen?utm_source=LP_Sustagenkids&utm_medium=farmadelivery&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[6],
-                    link:'https://www.drogariasaopaulo.com.br/suplemento-alimentar-sustagen-kids-baunilha-380g/p?utm_source=LP_Sustagenbaunilha&utm_medium=saopaulo&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.drogariaspacheco.com.br/suplemento-alimentar-sustagen-kids-baunilha-380g/p?utm_source=LP_Sustagenbaunilha&utm_medium=pacheco&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[7],
-                    link:'https://busca.magazineluiza.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkids&utm_medium=magalu&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.drogariasaopaulo.com.br/suplemento-alimentar-sustagen-kids-baunilha-380g/p?utm_source=LP_Sustagenbaunilha&utm_medium=saopaulo&utm_campaign=sustagen_ias&utm_term=RB'
+                },
+                {
+                    name:store_array[8],
+                    link:'https://www.ultrafarma.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkidssearch&utm_medium=ultrafarma&utm_campaign=sustagen_ias&utm_term=RB'
                 }
             ]});
             break;
@@ -104,35 +112,39 @@ $.each($('.products .list .item'), function(i){
                 stores: [
                 {
                     name:store_array[0],
-                    link:'https://www.carrefour.com.br/Sustagen-Kids-Sabor-Chocolate-380g/p/8707766?utm_source=LP_Sustagenchocolate&utm_medium=carrefour&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://busca.magazineluiza.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkids&utm_medium=magalu&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[1],
-                    link:'https://www.paodeacucar.com/produto/149353/alimento-nutritivo-sabor-chocolate-sustagen-kids-lata-380g?utm_source=LP_Sustagenchocolate&utm_medium=gpa&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.carrefour.com.br/Sustagen-Kids-Sabor-Chocolate-380g/p/8707766?utm_source=LP_Sustagenchocolate&utm_medium=carrefour&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[2],
-                    link:'https://www.paguemenos.com.br/sustagen-kids-chocolate-380g/p?utm_source=LP_Sustagenchocolate&utm_medium=paguemenos&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.paodeacucar.com/produto/149353/alimento-nutritivo-sabor-chocolate-sustagen-kids-lata-380g?utm_source=LP_Sustagenchocolate&utm_medium=gpa&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[3],
-                    link:'https://www.panvel.com/panvel/sustagen-kids-chocolate-380g/p-490010?utm_source=LP_Sustagenchocolate&utm_medium=panvel&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.paguemenos.com.br/sustagen-kids-chocolate-380g/p?utm_source=LP_Sustagenchocolate&utm_medium=paguemenos&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[4],
-                    link:'https://www.farmadelivery.com.br/marca/rb/sustagen?utm_source=LP_Sustagenkids&utm_medium=farmadelivery&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.panvel.com/panvel/sustagen-kids-chocolate-380g/p-490010?utm_source=LP_Sustagenchocolate&utm_medium=panvel&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[5],
-                    link:'https://www.drogariaspacheco.com.br/suplemento-alimentar-sustagen-kids-chocolate-380g/p?utm_source=LP_Sustagenchocolate&utm_medium=pacheco&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.farmadelivery.com.br/marca/rb/sustagen?utm_source=LP_Sustagenkids&utm_medium=farmadelivery&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[6],
-                    link:'https://www.drogariasaopaulo.com.br/suplemento-alimentar-sustagen-kids-chocolate-380g/p?utm_source=LP_Sustagenchocolate&utm_medium=saopaulo&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.drogariaspacheco.com.br/suplemento-alimentar-sustagen-kids-chocolate-380g/p?utm_source=LP_Sustagenchocolate&utm_medium=pacheco&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[7],
-                    link:'https://busca.magazineluiza.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkids&utm_medium=magalu&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.drogariasaopaulo.com.br/suplemento-alimentar-sustagen-kids-chocolate-380g/p?utm_source=LP_Sustagenchocolate&utm_medium=saopaulo&utm_campaign=sustagen_ias&utm_term=RB'
+                },
+                {
+                    name:store_array[8],
+                    link:'https://www.ultrafarma.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkidssearch&utm_medium=ultrafarma&utm_campaign=sustagen_ias&utm_term=RB'
                 }
             ]});
             break;
@@ -145,31 +157,35 @@ $.each($('.products .list .item'), function(i){
                 stores: [
                 {
                     name:store_array[0],
-                    link:'https://www.carrefour.com.br/Sustagen-Kids-Sabor-Morango-380g/p/8707855?utm_source=LP_Sustagenmorango&utm_medium=carrefour&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://busca.magazineluiza.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkids&utm_medium=magalu&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[1],
-                    link:'https://www.paodeacucar.com/produto/116959/alimento-nutritivo-sabor-morango-sustagen-kids-lata-380g?utm_source=LP_Sustagenmorango&utm_medium=gpa&utm_campaign=sustagen_ias&utm_term=RB'
+                    link:'https://www.carrefour.com.br/Sustagen-Kids-Sabor-Morango-380g/p/8707855?utm_source=LP_Sustagenmorango&utm_medium=carrefour&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
                     name:store_array[2],
+                    link:'https://www.paodeacucar.com/produto/116959/alimento-nutritivo-sabor-morango-sustagen-kids-lata-380g?utm_source=LP_Sustagenmorango&utm_medium=gpa&utm_campaign=sustagen_ias&utm_term=RB'
+                },
+                {
+                    name:store_array[3],
                     link:'https://www.paguemenos.com.br/sustagen-kids-morango-380g/p?utm_source=LP_Sustagenmorango&utm_medium=paguemenos&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
-                    name:store_array[4],
+                    name:store_array[5],
                     link:'https://www.farmadelivery.com.br/marca/rb/sustagen?utm_source=LP_Sustagenkids&utm_medium=farmadelivery&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
-                    name:store_array[5],
+                    name:store_array[6],
                     link:'https://www.drogariaspacheco.com.br/suplemento-alimentar-sustagen-kids-morango-380g/p?utm_source=LP_Sustagenmorango&utm_medium=pacheco&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
-                    name:store_array[6],
+                    name:store_array[7],
                     link:'https://www.drogariasaopaulo.com.br/suplemento-alimentar-sustagen-kids-morango-380g/p?utm_source=LP_Sustagenmorango&utm_medium=saopaulo&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
-                    name:store_array[7],
-                    link:'https://busca.magazineluiza.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkids&utm_medium=magalu&utm_campaign=sustagen_ias&utm_term=RB'
+                    name:store_array[8],
+                    link:'https://www.ultrafarma.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkidssearch&utm_medium=ultrafarma&utm_campaign=sustagen_ias&utm_term=RB'
                 }
             ]});
             break;
@@ -181,8 +197,12 @@ $.each($('.products .list .item'), function(i){
                 type: thisType,
                 stores: [
                 {
-                    name:store_array[1],
+                    name:store_array[2],
                     link:'https://www.paodeacucar.com/produto/355190/alimento-nutritivo-sabor-vitamina-de-frutas-sustagen-kids-lata-380g?utm_source=LP_Sustagenvitamina&utm_medium=gpa&utm_campaign=sustagen_ias&utm_term=RB'
+                },
+                {
+                    name:store_array[8],
+                    link:'https://www.ultrafarma.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkidssearch&utm_medium=ultrafarma&utm_campaign=sustagen_ias&utm_term=RB'
                 }
             ]});
             break;
@@ -194,12 +214,16 @@ $.each($('.products .list .item'), function(i){
                 type: thisType,
                 stores: [
                 {
-                    name:store_array[0],
+                    name:store_array[1],
                     link:'https://www.carrefour.com.br/Sustagen-Kids-Nutricao-Infantil-Chocolate-190Gr-Sache/p/MV18710316?utm_source=LP_Sustagenchocolate&utm_medium=carrefour&utm_campaign=sustagen_ias&utm_term=RB'
                 },
                 {
-                    name:store_array[1],
+                    name:store_array[2],
                     link:'https://www.paodeacucar.com/produto/107226/alimento-nutritivo-sabor-chocolate-sustagen-kids-sache-190g?utm_source=LP_Sustagenchocolate&utm_medium=gpa&utm_campaign=sustagen_ias&utm_term=RB'
+                },
+                {
+                    name:store_array[8],
+                    link:'https://www.ultrafarma.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkidssearch&utm_medium=ultrafarma&utm_campaign=sustagen_ias&utm_term=RB'
                 }
             ]});
             break;
@@ -211,8 +235,12 @@ $.each($('.products .list .item'), function(i){
                 type: thisType,
                 stores: [
                 {
-                    name:store_array[0],
+                    name:store_array[1],
                     link:'https://www.carrefour.com.br/Sustagen-Kids-Sabor-Baunilha-Sache-190g/p/8952655?utm_source=LP_Sustagenbaunilha&utm_medium=carrefour&utm_campaign=sustagen_ias&utm_term=RB'
+                },
+                {
+                    name:store_array[8],
+                    link:'https://www.ultrafarma.com.br/busca?q=sustagen%20kids&utm_source=LP_Sustagenkidssearch&utm_medium=ultrafarma&utm_campaign=sustagen_ias&utm_term=RB'
                 }
             ]});
             break;
