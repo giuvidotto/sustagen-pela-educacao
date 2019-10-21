@@ -1526,14 +1526,15 @@ img {
     padding: 0;
   }
   html #modal .window {
-    border-top: 5rem solid #214b75;
-    border-bottom: 5rem solid #214b75;
-    border-left: 6rem solid #214b75;
-    border-right: 6rem solid #214b75;
+    border-top: 4.8rem solid #214b75;
+    border-bottom: 4.8rem solid #214b75;
+    border-left: 4.8rem solid #214b75;
+    border-right: 4.8rem solid #214b75;
   }
   html #modal .window .close {
-    width: 6rem;
-    height: 5rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    background-size: 50% auto;
   }
 }
 
@@ -1542,16 +1543,14 @@ img {
     font-size: 10px;
   }
   #modal .window {
-    border-top-width: 4.5rem;
-    border-bottom-width: 4.5rem;
-    border-left-width: 3rem;
-    border-right-width: 3rem;
+    border-top: 3.6rem solid #214b75;
+    border-bottom: 3.6rem solid #214b75;
+    border-left: 3.6rem solid #214b75;
+    border-right: 3.6rem solid #214b75;
   }
   #modal .window .close {
-    width: 3rem;
-    height: 4.5rem;
-    background-size: 50% auto;
-    left: 99%;
+    width: 3.6rem;
+    height: 3.6rem;
   }
   #modal .window ul li {
     max-width: 33%;
@@ -1614,16 +1613,13 @@ img {
     margin-bottom: 0;
   }
   #modal .window {
-    border-top-width: 2.5rem;
-    border-bottom-width: 2.5rem;
-    border-left-width: 1.25rem;
-    border-right-width: 1.25rem;
+    border-top: 2.4rem solid #214b75;
+    border-bottom: 2.4rem solid #214b75;
+    border-left: 2.4rem solid #214b75;
+    border-right: 2.4rem solid #214b75;
   }
   #modal .window .close {
-    width: 1.25rem;
-    height: 2.5rem;
     background-size: 70% auto;
-    left: 98.5%;
   }
   #wrapper {
     padding: 0;
