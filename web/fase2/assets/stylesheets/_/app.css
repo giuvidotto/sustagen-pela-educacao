@@ -1150,7 +1150,6 @@ img {
   padding: 1rem;
   cursor: pointer;
   box-sizing: content-box;
-  mix-blend-mode: exclusion;
 }
 
 #wrapper .regulamento .container .show-more .img {

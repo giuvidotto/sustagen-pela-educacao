@@ -412,6 +412,19 @@ img {
   }
 }
 
+#modal .window ul li a[data-store=ultrafarma] {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../images/store-ultrafarma.min@sm.png);
+  background-position: center center;
+}
+
+@media all and (min-width: 992px) {
+  #modal .window ul li a[data-store=ultrafarma] {
+    background-image: url(../images/store-ultrafarma.min.png);
+  }
+}
+
 #modal .window ul li a:hover {
   transform: scale(1.1);
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
@@ -1401,9 +1414,15 @@ img {
   }
 }
 
+@media all and (max-width: 1199px) {
+  #wrapper .resultado .text-3 {
+    width:100%;
+  }
+}
+
 #wrapper .resultado .text-3 .text-3-a {
   text-align: right;
-  font-size: 4.2rem;
+  font-size: 2.8rem;
   padding-right: 3.6rem;
   flex-grow: 1;
 }
@@ -1431,7 +1450,7 @@ img {
 #wrapper .resultado .text-3 .text-3-d {
   text-align: left;
   font-size: 2.8rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   flex-shrink: 1;
   flex-grow: 0;
 }
@@ -1757,6 +1776,7 @@ img {
     flex-direction: column;
     align-items: flex-end;
     padding: 4rem 2rem;
+    width: 80%;
   }
   #wrapper .resultado .text-3 .text-3-a {
     text-align: left;
